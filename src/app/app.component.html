@@ -35,6 +35,7 @@
               <div class="uk-width-1-1" [ngClass]="{ 'uk-text-danger': node.status === false, 'uk-text-muted': node.status === null && isConfigured() }" style="margin-top: 0; padding-bottom: 7px;">
                 <span *ngIf="node.status === null" uk-tooltip title="Attempting to connect to the Banano node">CONNECTING</span>
                 <span *ngIf="node.status === false" uk-tooltip title="Unable to connect to the Banano node. Refresh or select a new server">NODE DISCONNECTED</span>
+                
               </div>
             </div>
 
@@ -46,7 +47,7 @@
               </div>
             </div>
 
-            <img *ngIf="isConfigured() && walletService.wallet.accounts[0].id" id="card-monkey" [src]="'https://monkey.banano.cc/api/v1/monkey/' + walletService.wallet.accounts[0].id + '?svc=bananovault'">
+            <img *ngIf="isConfigured() && walletService.wallet.accounts[0].id && node.status === true" id="card-monkey" [src]="'https://monkey.banano.cc/api/v1/monkey/' + walletService.wallet.accounts[0].id + '?svc=bananovault'">
              
 
           </div>
@@ -162,6 +163,7 @@
               <div class="uk-width-1-1" [ngClass]="{ 'uk-text-danger': node.status === false, 'uk-text-muted': node.status === null && isConfigured() }" style="margin-top: 0; padding-bottom: 7px;">
                 <span *ngIf="node.status === null" uk-tooltip title="Attempting to connect to the Banano node">CONNECTING</span>
                 <span *ngIf="node.status === false" uk-tooltip title="Unable to connect to the Banano node. Refresh or select a new server">NODE DISCONNECTED</span>
+              
               </div>
             </div>
 
@@ -173,7 +175,7 @@
               </div>
             </div>
 
-            <img *ngIf="isConfigured() && walletService.wallet.accounts[0].id" id="card-monkey" [src]="'https://monkey.banano.cc/api/v1/monkey/' + walletService.wallet.accounts[0].id + '?svc=bananovault'">
+            <img  *ngIf="isConfigured() && walletService.wallet.accounts[0].id && node.status === true" id="card-monkey" [src]="'https://monkey.banano.cc/api/v1/monkey/' + walletService.wallet.accounts[0].id + '?svc=bananovault'">
              
 
           </div>
